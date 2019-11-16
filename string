@@ -1,0 +1,4 @@
+def greet_funt(greeting,name='you'):
+    return '{},{}'.format(greeting,name)
+
+print(greet_funt('hello',name='ba'))
