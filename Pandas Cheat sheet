@@ -1,4 +1,10 @@
-Pandas
+#Pandas Few Examples
+
+#Example 1
+
+# How to open and work on "titanic.csv" file
+# Some examples
+
 %matplotlib inline
 import numpy as np
 import pandas as pd
@@ -38,6 +44,8 @@ df.dtypes
 df.info()
 df.values
 
+
+#Example 2
 df = pd.DataFrame({'age':    [ 3,  29],
 ...                    'height': [94, 170],
 ...                    'weight': [31, 115]})
@@ -54,7 +62,7 @@ dtype: object
 array([[  3,  94,  31],
        [ 29, 170, 115]], dtype=int64)
 
-
+#Attribute
 #pip install detect_delimiter
 no2_df.isnull()
 no2_df.notnull()
@@ -66,7 +74,7 @@ df[['Age', 'Fare']]
 df = df.set_index('Name')
 df.loc['Bonnell, Miss. Elizabeth', 'Fare']
 
-
+#Example 3
 df = pd.DataFrame({'Weight':[45, 88, 56, 15, 71], 
                    'Name':['Sam', 'Andrea', 'Alex', 'Robin', 'Kia'], 
                    'Age':[14, 25, 55, 8, 21]}) 
@@ -80,7 +88,7 @@ df.index = index_
 # Print the DataFrame 
 print(df) 
 
-
+# Example 4
 mydict = [{'a': 1, 'b': 2, 'c': 3, 'd': 4},
 ...           {'a': 100, 'b': 200, 'c': 300, 'd': 400},
 ...           {'a': 1000, 'b': 2000, 'c': 3000, 'd': 4000 }]
