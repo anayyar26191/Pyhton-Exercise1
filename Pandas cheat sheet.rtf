@@ -1,0 +1,220 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fmodern\fcharset0 CourierNewPS-BoldMT;
+\f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red29\green30\blue26;\red246\green246\blue239;
+\red244\green0\blue95;\red0\green0\blue0;\red224\green213\blue97;\red98\green94\blue76;\red26\green26\blue26;
+\red249\green249\blue249;\red83\green83\blue83;\red50\green91\blue142;\red29\green111\blue63;\red184\green73\blue12;
+\red38\green38\blue38;\red157\green101\blue255;\red88\green209\blue235;\red13\green95\blue24;}
+{\*\expandedcolortbl;;\csgray\c100000;\cssrgb\c15294\c15686\c13333;\cssrgb\c97255\c97255\c94902;
+\cssrgb\c97647\c14902\c44706;\cssrgb\c0\c0\c0\c84314;\cssrgb\c90196\c85882\c45490;\cssrgb\c45882\c44314\c36863;\cssrgb\c13333\c13333\c13333;
+\cssrgb\c98039\c98039\c98039;\cssrgb\c40000\c40000\c40000;\cssrgb\c25098\c43922\c62745;\cssrgb\c12549\c50196\c31373;\cssrgb\c77647\c36471\c3529;
+\cssrgb\c20000\c20000\c20000;\cssrgb\c68235\c50588\c100000;\cssrgb\c40000\c85098\c93725;\cssrgb\c0\c43922\c12549;}
+\margl1440\margr1440\vieww10800\viewh7900\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs49\fsmilli24883 \cf0 Pandas
+\fs24 \
+%matplotlib inline\
+import numpy as np\
+import pandas as pd\
+import matplotlib.pyplot as plt\
+\
+pd.options.display.max_rows = 8\
+\
+import os\
+os.getcwd()\
+os.chdir("/Users/macbookpro/Downloads/")#change  directory\
+df = pd.read_csv("titanic.csv")\
+print (os.path.abspath("titanic.csv"))\
+df.head()\
+df['Age'].hist()\
+df.descri\ul be()\
+\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\f1\fs23\fsmilli11761 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\ulc2 gk\cf4 \ulc4  
+\f2\b \cf5 \ulc5 =
+\f1\b0\fs23\fsmilli11880 \cf6 \ulc6  
+\fs23\fsmilli11761 \cf4 \ulc4 df.group\cb2 by(\cf7 \ulc7 'Team'\cf4 \ulc4 ) 
+\fs23\fsmilli11880 \cf6 \ulc6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf6 \'a0
+\fs23\fsmilli11880 \'a0\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf8 \ulc8 # Let's print the first entries 
+\fs23\fsmilli11880 \cf6 \ulc6 \
+
+\fs23\fsmilli11761 \cf8 \ulc8 # in all the groups formed. 
+\fs23\fsmilli11880 \cf6 \ulc6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf4 \ulc4 gk.first() \
+
+\fs23\fsmilli11880 \cf6 \ulc6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf8 \ulc8 # Finding the values contained in the "Boston Celtics" group 
+\fs23\fsmilli11880 \cf6 \ulc6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf4 \ulc4 gk.get_group(\cf7 \ulc7 'Boston Celtics'\cf4 \ulc4 ) 
+\fs23\fsmilli11880 \cf6 \ulc6 \
+\
+data['2013':].resample('M').mean().plot(ylim=[0,120])\
+\
+data['weekday'] = data.index.weekday\
+data['weekend'] = data['weekday'].isin([5, 6])\
+data_weekend = data.groupby(['weekend', data.index.hour])['BASCH'].mean().unstack(level=0)\
+data_weekend.plot()\
+titanic_df= df\
+\
+df.index\
+df.columns\
+df.dtypes\
+df.info()\
+df.values\
+\
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f3\fs26\fsmilli13200 \cf9 \cb10 \ulnone df \cf11 =\cf9  pd\cf11 .\cf9 DataFrame(\{\cf12 'age'\cf9 :    [ \cf13 3\cf9 ,  \cf13 29\cf9 ],\
+
+\f4\b \cf14 ... 
+\f3\b0 \cf9                    \cf12 'height'\cf9 : [\cf13 94\cf9 , \cf13 170\cf9 ],\
+
+\f4\b \cf14 ... 
+\f3\b0 \cf9                    \cf12 'weight'\cf9 : [\cf13 31\cf9 , \cf13 115\cf9 ]\})\
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df\
+\cf15    age  height  weight\cf9 \
+\cf15 0    3      94      31\cf9 \
+\cf15 1   29     170     115\cf9 \
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df\cf11 .\cf9 dtypes\
+\cf15 age       int64\cf9 \
+\cf15 height    int64\cf9 \
+\cf15 weight    int64\cf9 \
+\cf15 dtype: object\cf9 \
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df\cf11 .\cf9 values\
+\cf15 array([[  3,  94,  31],\cf9 \
+\cf15        [ 29, 170, 115]], dtype=int64)\cf9 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\f1\fs23\fsmilli11880 \cf6 \cb2 \ul \
+\
+#pip install detect_delimiter\
+no2_df.isnull()\
+no2_df.notnull()\
+no2_df.isna()\
+no2_df.head(3)\
+no2_df.tail()\
+no2_df.describe()\
+df[['Age', 'Fare']]\
+df = df.set_index('Name')\
+df.loc['Bonnell, Miss. Elizabeth', 'Fare']\
+\
+\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf4 \cb3 \ulnone df 
+\f2\b \cf5 =
+\f1\b0\fs23\fsmilli11880 \cf6  
+\fs23\fsmilli11761 \cf4 pd.DataFrame(\{\cf7 'Weight'\cf4 :[\cf16 45\cf4 , \cf16 88\cf4 , \cf16 56\cf4 , \cf16 15\cf4 , \cf16 71\cf4 ], 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf6 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 'Name'\cf4 :[\cf7 'Sam'\cf4 , \cf7 'Andrea'\cf4 , \cf7 'Alex'\cf4 , \cf7 'Robin'\cf4 , \cf7 'Kia'\cf4 ], 
+\fs23\fsmilli11880 \cf6 \
+
+\fs23\fsmilli11761 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf7 'Age'\cf4 :[\cf16 14\cf4 , \cf16 25\cf4 , \cf16 55\cf4 , \cf16 8\cf4 , \cf16 21\cf4 ]\}) 
+\fs23\fsmilli11880 \cf6 \
+
+\fs23\fsmilli11761 \'a0
+\fs23\fsmilli11880 \'a0\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf8 # Create the index 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf4 index_ 
+\f2\b \cf5 =
+\f1\b0\fs23\fsmilli11880 \cf6  
+\fs23\fsmilli11761 \cf4 [\cf7 'Row_1'\cf4 , \cf7 'Row_2'\cf4 , \cf7 'Row_3'\cf4 , \cf7 'Row_4'\cf4 , \cf7 'Row_5'\cf4 ] 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf6 \'a0
+\fs23\fsmilli11880 \'a0\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf8 # Set the index 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf4 df.index 
+\f2\b \cf5 =
+\f1\b0\fs23\fsmilli11880 \cf6  
+\fs23\fsmilli11761 \cf4 index_ 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf6 \'a0
+\fs23\fsmilli11880 \'a0\
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf8 # Print the DataFrame 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\fs23\fsmilli11761 \cf17 print\cf4 (df) 
+\fs23\fsmilli11880 \cf6 \
+\pard\pardeftab720\sl282\partightenfactor0
+\cf6 \cb2 \ul \
+\
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f3\fs26\fsmilli13200 \cf9 \cb10 \ulnone mydict \cf11 =\cf9  [\{\cf12 'a'\cf9 : \cf13 1\cf9 , \cf12 'b'\cf9 : \cf13 2\cf9 , \cf12 'c'\cf9 : \cf13 3\cf9 , \cf12 'd'\cf9 : \cf13 4\cf9 \},\
+
+\f4\b \cf14 ... 
+\f3\b0 \cf9           \{\cf12 'a'\cf9 : \cf13 100\cf9 , \cf12 'b'\cf9 : \cf13 200\cf9 , \cf12 'c'\cf9 : \cf13 300\cf9 , \cf12 'd'\cf9 : \cf13 400\cf9 \},\
+
+\f4\b \cf14 ... 
+\f3\b0 \cf9           \{\cf12 'a'\cf9 : \cf13 1000\cf9 , \cf12 'b'\cf9 : \cf13 2000\cf9 , \cf12 'c'\cf9 : \cf13 3000\cf9 , \cf12 'd'\cf9 : \cf13 4000\cf9  \}]\
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df \cf11 =\cf9  pd\cf11 .\cf9 DataFrame(mydict)\
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df\
+\cf15       a     b     c     d\cf9 \
+\cf15 0     1     2     3     4\cf9 \
+\cf15 1   100   200   300   400\cf9 \
+\cf15 2  1000  2000  3000  4000\cf9 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\f1\fs23\fsmilli11880 \cf6 \cb2 \ul \
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f3\fs26\fsmilli13200 \cf18 \cb10 \ulnone type\cf9 (df\cf11 .\cf9 iloc[\cf13 0\cf9 ])\
+\pard\pardeftab720\sl316\partightenfactor0
+\cf15 <class 'pandas.core.series.Series'>\cf9 \
+
+\f4\b \cf14 >>> 
+\f3\b0 \cf9 df\cf11 .\cf9 iloc[\cf13 0\cf9 ]\
+\cf15 a    1\cf9 \
+\cf15 b    2\cf9 \
+\cf15 c    3\cf9 \
+\cf15 d    4\cf9 \
+\cf15 Name: 0, dtype: int64\cf9 \
+\pard\pardeftab720\sl282\partightenfactor0
+
+\f1\fs23\fsmilli11880 \cf6 \cb2 \ul \
+\
+}
