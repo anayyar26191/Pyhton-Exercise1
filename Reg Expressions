@@ -1,0 +1,51 @@
+
+Reg expression
+https://regex101.com/
+
+., +, *, ?, ^, $, (, ), [, ], {, }, |
+
+.
++
+*
+?
+$
+(, )
+[, ]
+{, }
+|
+(\char)
+\.   matches”.”
+\\   matches “\”
+\n 	 matches “new line”
+\t	 for tab
+\r	 for carriage return
+\nnn		octal
+\xhh	    2-digit hex code
+\nhhhh	4-digit unicode code
+\\uhhhhhhhh  8-digit unicode
+[aeiou]
+[0-9]
+[^….]
+
++: one or more(1+)
+*?  0 or more (0+)
+?:  0 ore 1 [+-]. Or an empty string
+{m,n} m to n
+{m, } m or more
+
+.(dot) Any one character except newline. Same as [^\n]
+\d, \D  any one digit [0-9]
+\w, \W any one word  For ASCII [a-zA-Z0-9]
+|s, \S any one space white space characters are [ \n\r\t\f]
+
+^,$: start of line and end of line ^[0-9]$ matches a numeric string
+\b: boundary of word means start of word or end of word \brat\b matches rat
+\B inverse of \b non start of word or end of word
+\<, \> start of word or end of word similar to \b
+\A, \z start of the input and end of the input
+
+use parentheses () to create a back reference
+Use $1,$2 (Java,Perl,JavaScript) or \1, \2, ….(Python) to retrieve the back references in sequential order.
+
+
+
