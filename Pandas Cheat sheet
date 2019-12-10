@@ -1,0 +1,103 @@
+Pandas
+%matplotlib inline
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+pd.options.display.max_rows = 8
+
+import os
+os.getcwd()
+os.chdir("/Users/macbookpro/Downloads/")#change  directory
+df = pd.read_csv("titanic.csv")
+print (os.path.abspath("titanic.csv"))
+df.head()
+df['Age'].hist()
+df.describe()
+
+gk = df.groupby('Team') 
+  
+# Let's print the first entries 
+# in all the groups formed. 
+gk.first() 
+
+# Finding the values contained in the "Boston Celtics" group 
+gk.get_group('Boston Celtics') 
+
+data['2013':].resample('M').mean().plot(ylim=[0,120])
+
+data['weekday'] = data.index.weekday
+data['weekend'] = data['weekday'].isin([5, 6])
+data_weekend = data.groupby(['weekend', data.index.hour])['BASCH'].mean().unstack(level=0)
+data_weekend.plot()
+titanic_df= df
+
+df.index
+df.columns
+df.dtypes
+df.info()
+df.values
+
+df = pd.DataFrame({'age':    [ 3,  29],
+...                    'height': [94, 170],
+...                    'weight': [31, 115]})
+>>> df
+   age  height  weight
+0    3      94      31
+1   29     170     115
+>>> df.dtypes
+age       int64
+height    int64
+weight    int64
+dtype: object
+>>> df.values
+array([[  3,  94,  31],
+       [ 29, 170, 115]], dtype=int64)
+
+
+#pip install detect_delimiter
+no2_df.isnull()
+no2_df.notnull()
+no2_df.isna()
+no2_df.head(3)
+no2_df.tail()
+no2_df.describe()
+df[['Age', 'Fare']]
+df = df.set_index('Name')
+df.loc['Bonnell, Miss. Elizabeth', 'Fare']
+
+
+df = pd.DataFrame({'Weight':[45, 88, 56, 15, 71], 
+                   'Name':['Sam', 'Andrea', 'Alex', 'Robin', 'Kia'], 
+                   'Age':[14, 25, 55, 8, 21]}) 
+  
+# Create the index 
+index_ = ['Row_1', 'Row_2', 'Row_3', 'Row_4', 'Row_5'] 
+  
+# Set the index 
+df.index = index_ 
+  
+# Print the DataFrame 
+print(df) 
+
+
+mydict = [{'a': 1, 'b': 2, 'c': 3, 'd': 4},
+...           {'a': 100, 'b': 200, 'c': 300, 'd': 400},
+...           {'a': 1000, 'b': 2000, 'c': 3000, 'd': 4000 }]
+>>> df = pd.DataFrame(mydict)
+>>> df
+      a     b     c     d
+0     1     2     3     4
+1   100   200   300   400
+2  1000  2000  3000  4000
+
+type(df.iloc[0])
+<class 'pandas.core.series.Series'>
+>>> df.iloc[0]
+a    1
+b    2
+c    3
+d    4
+Name: 0, dtype: int64
+
+
